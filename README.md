@@ -1,3 +1,3 @@
 ###  Info
-Hier findest Du alle Dateien zu meinen Videos auf YouTube.
-Mein Channel: https://youtube.com/user/torbla74
+Hier findest Du alle Dateien zu meinen Videos auf YouTube. </br>
+YouTube: https://youtube.com/user/torbla74
