@@ -1,0 +1,5 @@
+##Projektstatusdatum
+tb_reporttime = Format(msdyn_project[msdyn_scheduledstart].[Date], "dd.MM.yy") & " - " & Format(TODAY(), "dd.MM.yy")
+
+##Beschreibeungstext kürzen
+tb_ProjektBeschreibungKurz = IF(msdyn_project[cr000_projektbeschreibung] = BLANK(), "K.A." , CONCATENATE(Left(msdyn_project[cr000_projektbeschreibung] ,250), "..."))
