@@ -1,0 +1,7 @@
+Autor: Torben Blankertz 
+Datum: 10.02.2023
+
+Hier sind die Code-Beispiele für den Workflow
+
+Berechnung % = mul(variables('Abgeschlossen'),100)
+Datum heute inkl. Uhrzeit = formatDateTime(convertFromUtc(utcNow(),'W. Europe Standard Time'), 'dd.MM.yy HH:mm')
