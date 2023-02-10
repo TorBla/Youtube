@@ -1,0 +1,4 @@
+Formelsammlung:
+
+Berechnung % = mul(variables('Abgeschlossen'),100)
+Datum heute inkl. Uhrzeit = formatDateTime(convertFromUtc(utcNow(),'W. Europe Standard Time'), 'dd.MM.yy HH:mm')
