@@ -1,0 +1,31 @@
+Name: Daily Projektreport mit Power Automate - Projektliste über API abrufen (Teil 1)
+
+Diese Datei dient als begleitendes Material zu meinem YouTube-Video und soll als Hilfestellung für die darin behandelten Themen dienen. Sie enthält alle Code-Beispiele, die im Video verwendet wurden, und ermöglicht es dir, die Schritte nachzuvollziehen und direkt anzuwenden.
+
+1) OData-URL 
+OData-URL für den Zugriff auf Projektwebsites in SharePoint
+
+2) Auslesen der Datenbanken über den Endpunkt
+_api/ProjectData/[de-de]/
+
+3) Auslesen der Projekte über den Endpunkt 
+_api/ProjectData/[de-de]/Projekte
+
+4) Festlegen des Headers zur Reduzierung von OData-Metadaten in der Antwort
+Accept application/json;odata=nometadata
+
+Hinweis: Der Header Accept: application/json;odata=nometadata in einem HTTP-Request sagt dem Server, dass die Antwort im JSON-Format gesendet werden soll, aber ohne zusätzliche OData-Metadaten, die normalerweise enthalten sind. Dadurch wird die Antwort kompakter, da nur die benötigten Daten und keine zusätzlichen Infos zu Typen oder Beziehungen zurückgegeben werden. Das ist ideal, wenn du nur die reinen Inhalte brauchst und deinen Datenverkehr schlank halten möchtest!
+
+5) Gezielte Spaltenabfrage mit oData "$select" 
+?$select=ProjektID, PMStatus, ABNummer, Auftraggber, ProjektBesitzerName, Tagessatz, ProjektDauer, ProjektAnfangsTermin, ProjektEndTermin
+
+Hinweis: Hierbei handelt es sich um meine benutzerdefinierten Spalten. Diese musst du durch deine Spaltennamen ersetzen!
+
+6) Spaltenfilter mit einem Ausdruck:
+&$filter=PMStatus eq 'Plan'  
+
+7) Spaltenfilter mit zwei Ausdrücken:
+&$filter=PMStatus eq 'Plan' and ABNummer ne blank  
+
+8) Mehrere Filterabfragen in einer Spalte: 
+&$filter=(PMStatus eq 'Plan' or PMStatus eq 'Proposal') and ABNummer ne null
