@@ -1,0 +1,18 @@
+Name: Daily Projektreport mit Power Automate - Datenharmonisierung mit JSON (Teil 2)
+
+Diese Datei dient als begleitendes Material zu meinem YouTube-Video und soll als Hilfestellung für die darin behandelten Themen dienen. Sie enthält alle Code-Beispiele, die im Video verwendet wurden, und ermöglicht es dir, die Schritte nachzuvollziehen und direkt anzuwenden.
+
+1) Code für das aktuelle Datum:
+AktuellesDatum = formatDateTime(utcNow(), 'dd.MM.yyyy')
+
+2) Code für das Startdatum:
+formatDateTime(item()?['ProjektAnfangsTermin'], 'dd.MM.yyyy')
+
+3) Code für das Enddatum:
+EndDatum = formatDateTime(item()?['ProjektEndTermin'], 'dd.MM.yyyy')
+
+4) Code für die Dauer:
+concat(formatNumber(float(item()?['ProjektDauer']), '0.00'), ' PT')
+
+5) Code für den Tagessatz:
+concat(replace(formatNumber(float(item()?['Tagessatz']), '0.00' ), '.', ','), ' €')
