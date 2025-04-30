@@ -1,0 +1,42 @@
+Name: Daily Projektreport mit Power Automte - Dynamische Tabelle erstellen (Teil 3)
+
+Diese Datei dient als begleitendes Material zu meinem YouTube-Video und soll als Hilfestellung für die darin behandelten Themen dienen. Sie enthält alle Code-Beispiele, die im Video verwendet wurden, und ermöglicht es dir, die Schritte nachzuvollziehen und direkt anzuwenden.
+
+1) Verwendeter theader im Video: 
+
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #4CAF50; color: white;">
+
+	<th style="text-align: left;">AB-Nummer</th>
+	<th style="text-align: left;">Projektname</th>
+	<th style="text-align: left;">Start</th>
+	<th style="text-align: left;">Ende</th>
+	<th style="text-align: left;">Dauer</th>
+	<th style="text-align: left;">Tagessatz</th>
+	<th style="text-align: left;">Firma</th>
+	<th style="text-align: left;">Status</th>
+
+</tr>
+  </thead>
+  <tbody>
+    Variable('HTMLRows')
+  </tbody>
+</table>
+
+Hinweis: Bitte Felder an die eigene Umgebung anpassen!
+
+3) Verwendeter tbody in dem Video:
+
+<tr>
+<td style="text-align: left;">@{item()?['ABNummer']}</td>
+<td style="text-align: left;">@{item()?['ProjektName']}</td>
+<td style="text-align: left;">@{outputs('StartDatum')}</td>
+<td style="text-align: left; ">@{outputs('EndDatum')}</td>
+<td style="text-align: left;">@{outputs('Dauer')}</td>
+<td style="text-align: left;">@{outputs('Tagessetz')}</td>
+<td style="text-align: left;">@{item()?['Auftraggber']}</td>
+<td style="text-align: left;">@{item()?['PMStatus']}</td>
+</tr>
+
+Hinweis: Bitte Felder an die eigene Umgebung anpassen!
